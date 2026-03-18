@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>所有文章 on Aries441's Tech Blog</title><link>https://aries441.tech/posts/</link><description>Recent content in 所有文章 on Aries441's Tech Blog</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 18 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://aries441.tech/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>LLM Agent 驱动的安全审计：以 DeepAudit 为例</title><link>https://aries441.tech/posts/paper-reading/deepaudit-review/</link><pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate><guid>https://aries441.tech/posts/paper-reading/deepaudit-review/</guid><description>&lt;h2 id="论文概述"&gt;论文概述&lt;/h2&gt;
+&lt;p&gt;DeepAudit 提出了将 LLM Agent 引入代码安全审计的新范式。&lt;/p&gt;
+&lt;h2 id="核心启发"&gt;核心启发&lt;/h2&gt;
+&lt;p&gt;在设计 &lt;strong&gt;AccessGuard&lt;/strong&gt; 时，我借鉴了 DeepAudit 的以下思路：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;状态机编排&lt;/strong&gt;：使用类似 LangGraph 的状态机，而非简单的 Chain-of-Thought。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工具调用设计&lt;/strong&gt;：引入了 &lt;code&gt;auth_lookup&lt;/code&gt; 和 &lt;code&gt;read_symbol_batch&lt;/code&gt;，让 Agent 主动探索上下文，而不是一次性被动填入大量无用代码。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="实验与对比"&gt;实验与对比&lt;/h2&gt;
+&lt;p&gt;(未完待续&amp;hellip;)&lt;/p&gt;</description></item></channel></rss>
