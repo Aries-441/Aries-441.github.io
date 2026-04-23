@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>漏洞复现 on Aries441's Tech Blog</title><link>https://Aries-441.github.io/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</link><description>Recent content in 漏洞复现 on Aries441's Tech Blog</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 19 Mar 2026 00:00:00 +0800</lastBuildDate><atom:link href="https://Aries-441.github.io/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>Nacos 身份认证绕过漏洞复现 (CVE-2021-29441)</title><link>https://Aries-441.github.io/posts/vuln-reproduction/nacos-cve-2021-29441/</link><pubDate>Thu, 19 Mar 2026 00:00:00 +0800</pubDate><guid>https://Aries-441.github.io/posts/vuln-reproduction/nacos-cve-2021-29441/</guid><description>&lt;h2 id="漏洞背景"&gt;漏洞背景&lt;/h2&gt;
+&lt;p&gt;Nacos 是阿里巴巴开源的动态服务发现、配置管理和服务管理平台。
+在特定的历史版本中，Nacos 存在身份认证绕过漏洞（CVE-2021-29441）。&lt;/p&gt;
+&lt;h2 id="漏洞原理"&gt;漏洞原理&lt;/h2&gt;
+&lt;p&gt;由于在处理请求时，对特定 User-Agent 或特定参数判断存在逻辑缺陷，导致攻击者可以伪造身份绕过鉴权，直接读取或修改配置中心的配置。&lt;/p&gt;
+&lt;h2 id="accessguard-审计视角"&gt;AccessGuard 审计视角&lt;/h2&gt;
+&lt;p&gt;在重构 &lt;strong&gt;AccessGuard&lt;/strong&gt; 时，我们将 Nacos 作为一个典型的 DevOps 平台基础设施靶场。
+传统的 SAST 工具难以理解 &lt;code&gt;User-Agent&lt;/code&gt; 与后端拦截器（Interceptor）或过滤器（Filter）之间的权限状态转移。&lt;/p&gt;
+&lt;p&gt;通过引入 LLM-driven 的 Agentic 架构，AccessGuard 能够：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;识别 &lt;code&gt;NacosAuthFilter&lt;/code&gt; 中的守卫逻辑。&lt;/li&gt;
+&lt;li&gt;发现其对特殊请求头的硬编码放行逻辑。&lt;/li&gt;
+&lt;li&gt;判定该放行逻辑与敏感 Sink 之间存在可达路径。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="复现步骤"&gt;复现步骤&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;(本文为测试文章，详细复现步骤将在后续更新)&lt;/em&gt;&lt;/p&gt;</description></item></channel></rss>
