@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Aries441's Tech Blog</title><link>https://Aries-441.github.io/</link><description>Recent content on Aries441's Tech Blog</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 19 Mar 2026 00:00:00 +0800</lastBuildDate><atom:link href="https://Aries-441.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Nacos 身份认证绕过漏洞复现 (CVE-2021-29441)</title><link>https://Aries-441.github.io/posts/vuln-reproduction/nacos-cve-2021-29441/</link><pubDate>Thu, 19 Mar 2026 00:00:00 +0800</pubDate><guid>https://Aries-441.github.io/posts/vuln-reproduction/nacos-cve-2021-29441/</guid><description>&lt;h2 id="漏洞背景"&gt;漏洞背景&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Aries441's Tech Blog</title><link>https://aries441.tech/</link><description>Recent content on Aries441's Tech Blog</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 19 Mar 2026 00:00:00 +0800</lastBuildDate><atom:link href="https://aries441.tech/index.xml" rel="self" type="application/rss+xml"/><item><title>Nacos 身份认证绕过漏洞复现 (CVE-2021-29441)</title><link>https://aries441.tech/posts/vuln-reproduction/nacos-cve-2021-29441/</link><pubDate>Thu, 19 Mar 2026 00:00:00 +0800</pubDate><guid>https://aries441.tech/posts/vuln-reproduction/nacos-cve-2021-29441/</guid><description>&lt;h2 id="漏洞背景"&gt;漏洞背景&lt;/h2&gt;
 &lt;p&gt;Nacos 是阿里巴巴开源的动态服务发现、配置管理和服务管理平台。
 在特定的历史版本中，Nacos 存在身份认证绕过漏洞（CVE-2021-29441）。&lt;/p&gt;
 &lt;h2 id="漏洞原理"&gt;漏洞原理&lt;/h2&gt;
@@ -13,7 +13,7 @@
 &lt;li&gt;判定该放行逻辑与敏感 Sink 之间存在可达路径。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="复现步骤"&gt;复现步骤&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;(本文为测试文章，详细复现步骤将在后续更新)&lt;/em&gt;&lt;/p&gt;</description></item><item><title>关于我 (About Me)</title><link>https://Aries-441.github.io/about/</link><pubDate>Thu, 19 Mar 2026 00:00:00 +0800</pubDate><guid>https://Aries-441.github.io/about/</guid><description>&lt;h2 id="-简介"&gt;👋 简介&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;(本文为测试文章，详细复现步骤将在后续更新)&lt;/em&gt;&lt;/p&gt;</description></item><item><title>关于我 (About Me)</title><link>https://aries441.tech/about/</link><pubDate>Thu, 19 Mar 2026 00:00:00 +0800</pubDate><guid>https://aries441.tech/about/</guid><description>&lt;h2 id="-简介"&gt;👋 简介&lt;/h2&gt;
 &lt;p&gt;你好！我是 &lt;strong&gt;Aries441&lt;/strong&gt;，一名前沿的 AI 安全研究员。&lt;/p&gt;
 &lt;p&gt;目前我正在 &lt;strong&gt;中国科学院信息工程研究所 (IIE, CAS)&lt;/strong&gt; 攻读专硕，研究方向聚焦于 &lt;strong&gt;漏洞利用与挖掘&lt;/strong&gt;（特别是 LLM 辅助 DevOps 平台访问控制漏洞）。
 在此之前，我本科毕业于 &lt;strong&gt;上海交通大学 (SJTU)&lt;/strong&gt; 信息安全专业。&lt;/p&gt;
@@ -32,7 +32,7 @@
 &lt;li&gt;&lt;strong&gt;Email&lt;/strong&gt;: &lt;em&gt;(欢迎通过 GitHub 邮箱联系我)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;em&gt;“In security, context is everything.”&lt;/em&gt;&lt;/p&gt;</description></item><item><title>AccessGuard: 基于 LangGraph 的 DevOps 漏洞自动化审计</title><link>https://Aries-441.github.io/posts/projects/accessguard-intro/</link><pubDate>Wed, 18 Mar 2026 00:00:00 +0800</pubDate><guid>https://Aries-441.github.io/posts/projects/accessguard-intro/</guid><description>&lt;h2 id="痛点与背景"&gt;痛点与背景&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;“In security, context is everything.”&lt;/em&gt;&lt;/p&gt;</description></item><item><title>AccessGuard: 基于 LangGraph 的 DevOps 漏洞自动化审计</title><link>https://aries441.tech/posts/projects/accessguard-intro/</link><pubDate>Wed, 18 Mar 2026 00:00:00 +0800</pubDate><guid>https://aries441.tech/posts/projects/accessguard-intro/</guid><description>&lt;h2 id="痛点与背景"&gt;痛点与背景&lt;/h2&gt;
 &lt;p&gt;传统的 SAST（静态应用安全测试）工具通常基于数据流分析，在处理复杂的业务逻辑漏洞（如越权访问 IDOR/BAC）时显得力不从心。特别是在 DevOps 平台（如 GitLab, Jenkins, Nacos 等）中，权限模型往往是矩阵式的（User/Group/Project），传统扫描器无法有效覆盖。&lt;/p&gt;
 &lt;h2 id="accessguard-的破局思路"&gt;AccessGuard 的破局思路&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;AccessGuard&lt;/strong&gt; 引入了 LLM 驱动的 Agentic 架构：&lt;/p&gt;
