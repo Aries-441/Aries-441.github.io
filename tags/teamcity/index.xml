@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>漏洞复现 on Aries441's Tech Blog</title><link>https://aries441.tech/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</link><description>Recent content in 漏洞复现 on Aries441's Tech Blog</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 14 May 2026 00:00:00 +0800</lastBuildDate><atom:link href="https://aries441.tech/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>TeamCity 认证绕过漏洞复现与分析（CVE-2024-27198）</title><link>https://aries441.tech/posts/vuln-reproduction/teamcity-cve-2024-27198/</link><pubDate>Thu, 14 May 2026 00:00:00 +0800</pubDate><guid>https://aries441.tech/posts/vuln-reproduction/teamcity-cve-2024-27198/</guid><description>&lt;h1 id="teamcity认证绕过漏洞cve-2024-27198复现报告与分析"&gt;TeamCity认证绕过漏洞（CVE-2024-27198）复现报告与分析&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>TeamCity on Aries441's Tech Blog</title><link>https://aries441.tech/tags/teamcity/</link><description>Recent content in TeamCity on Aries441's Tech Blog</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 14 May 2026 00:00:00 +0800</lastBuildDate><atom:link href="https://aries441.tech/tags/teamcity/index.xml" rel="self" type="application/rss+xml"/><item><title>TeamCity 认证绕过漏洞复现与分析（CVE-2024-27198）</title><link>https://aries441.tech/posts/vuln-reproduction/teamcity-cve-2024-27198/</link><pubDate>Thu, 14 May 2026 00:00:00 +0800</pubDate><guid>https://aries441.tech/posts/vuln-reproduction/teamcity-cve-2024-27198/</guid><description>&lt;h1 id="teamcity认证绕过漏洞cve-2024-27198复现报告与分析"&gt;TeamCity认证绕过漏洞（CVE-2024-27198）复现报告与分析&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;免责声明：本博客文章仅用于教育和研究目的。提供的所有技术和代码示例旨在帮助防御者理解攻击手法并提高安全态势。请勿使用此信息访问或干扰您不拥有或没有明确测试权限的系统。未经授权的使用可能违反法律和道德准则。作者对因应用所讨论概念而导致的任何误用或损害不承担任何责任。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -57,19 +57,4 @@
 &lt;blockquote&gt;
 &lt;p&gt;本节内容依据 Rapid7 官方报告 analysis 部分进行翻译与整理，重点还原“代码层为什么会绕过”，而非仅描述复现步骤。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;该漏洞本质属于 &lt;strong&gt;CWE-288（Authentication Bypass Using an Alternate Path）&lt;/strong&gt;：请求在不同处理层被解释为不同语义，导致鉴权边界与执行边界错位。&lt;/p&gt;</description></item><item><title>Nacos 身份认证绕过漏洞复现 (CVE-2021-29441)</title><link>https://aries441.tech/posts/vuln-reproduction/nacos-cve-2021-29441/</link><pubDate>Thu, 19 Mar 2026 00:00:00 +0800</pubDate><guid>https://aries441.tech/posts/vuln-reproduction/nacos-cve-2021-29441/</guid><description>&lt;h2 id="漏洞背景"&gt;漏洞背景&lt;/h2&gt;
-&lt;p&gt;Nacos 是阿里巴巴开源的动态服务发现、配置管理和服务管理平台。
-在特定的历史版本中，Nacos 存在身份认证绕过漏洞（CVE-2021-29441）。&lt;/p&gt;
-&lt;h2 id="漏洞原理"&gt;漏洞原理&lt;/h2&gt;
-&lt;p&gt;由于在处理请求时，对特定 User-Agent 或特定参数判断存在逻辑缺陷，导致攻击者可以伪造身份绕过鉴权，直接读取或修改配置中心的配置。&lt;/p&gt;
-&lt;h2 id="accessguard-审计视角"&gt;AccessGuard 审计视角&lt;/h2&gt;
-&lt;p&gt;在重构 &lt;strong&gt;AccessGuard&lt;/strong&gt; 时，我们将 Nacos 作为一个典型的 DevOps 平台基础设施靶场。
-传统的 SAST 工具难以理解 &lt;code&gt;User-Agent&lt;/code&gt; 与后端拦截器（Interceptor）或过滤器（Filter）之间的权限状态转移。&lt;/p&gt;
-&lt;p&gt;通过引入 LLM-driven 的 Agentic 架构，AccessGuard 能够：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;识别 &lt;code&gt;NacosAuthFilter&lt;/code&gt; 中的守卫逻辑。&lt;/li&gt;
-&lt;li&gt;发现其对特殊请求头的硬编码放行逻辑。&lt;/li&gt;
-&lt;li&gt;判定该放行逻辑与敏感 Sink 之间存在可达路径。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id="复现步骤"&gt;复现步骤&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;(本文为测试文章，详细复现步骤将在后续更新)&lt;/em&gt;&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;该漏洞本质属于 &lt;strong&gt;CWE-288（Authentication Bypass Using an Alternate Path）&lt;/strong&gt;：请求在不同处理层被解释为不同语义，导致鉴权边界与执行边界错位。&lt;/p&gt;</description></item></channel></rss>
