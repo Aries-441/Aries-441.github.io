@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="3" y="3" width="58" height="58" rx="13" fill="#1F4E79"/>
+  <path d="M32 9 12 47h9l11-22 11 22h9L32 9Zm-8 24h16v4H24z" fill="#FAFAFA"/>
+  <text x="32" y="57" fill="#FAFAFA" font-family="monospace" font-size="8" font-weight="700" letter-spacing="1" text-anchor="middle">441</text>
+</svg>
