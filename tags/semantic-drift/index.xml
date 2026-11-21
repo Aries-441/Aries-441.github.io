@@ -42,4 +42,16 @@ Rapid7 的公开示例显示，攻击者可向 &lt;code&gt;/app/rest/users&lt;/c
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;接管 TeamCity 控制面（项目/构建/制品/代理）&lt;/strong&gt;
-在管理员权限下，影响范围不是单一页面，而是整个 TeamCity 控制面：&lt;/p&gt;</description></item></channel></rss>
+在管理员权限下，影响范围不是单一页面，而是整个 TeamCity 控制面：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;项目与构建配置修改&lt;/li&gt;
+&lt;li&gt;构建任务与构建步骤变更&lt;/li&gt;
+&lt;li&gt;构建代理与制品链路控制&lt;/li&gt;
+&lt;li&gt;凭据、连接配置与自动化流程滥用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;供应链外溢风险（从 CI/CD 平台扩展到下游）&lt;/strong&gt;
+TeamCity 是 CI/CD 中枢，一旦被管理员级接管，风险会外溢到制品发布、部署流程和下游环境，因此该漏洞的危害不止&amp;quot;单机被控&amp;quot;，而是&lt;strong&gt;可能演化为供应链级事件&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description></item></channel></rss>

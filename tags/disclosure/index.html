@@ -11,6 +11,7 @@
 直接创建管理员账号（权限立刻提升到 SYSTEM_ADMIN） Rapid7 的公开示例显示，攻击者可向 /app/rest/users 发起创建用户请求，并在请求体中赋予 SYSTEM_ADMIN 角色。 返回结果中的用户对象会包含管理员角色字段，这意味着攻击者无需先拿低权限账号，起手就是全局管理员。
 生成管理员访问令牌（持久化控制） 除了创建管理员用户，攻击者还可针对用户 token 接口（如 /app/rest/users/id:1/tokens/...）生成管理员 token。 一旦 token 生成成功，即使后续密码策略变更，攻击者仍可能通过 API 持续访问，形成较强持久化。
 接管 TeamCity 控制面（项目/构建/制品/代理） 在管理员权限下，影响范围不是单一页面，而是整个 TeamCity 控制面：
+项目与构建配置修改 构建任务与构建步骤变更 构建代理与制品链路控制 凭据、连接配置与自动化流程滥用 供应链外溢风险（从 CI/CD 平台扩展到下游） TeamCity 是 CI/CD 中枢，一旦被管理员级接管，风险会外溢到制品发布、部署流程和下游环境，因此该漏洞的危害不止"单机被控"，而是可能演化为供应链级事件。
 ...</p></div><footer class=entry-footer><span title='2026-05-15 00:00:00 +0800 CST'>May 15, 2026</span>&nbsp;·&nbsp;<span>4 min</span></footer><a class=entry-link aria-label="post link to 从 TeamCity 到语义漂移 — CI/CD 平台的认证绕过模式与披露伦理" href=https://aries441.tech/posts/vuln-reproduction/teamcity-cve-2024-27198-impact/></a></article></main><footer class=footer><span>&copy; 2026 <a href=https://aries441.tech/>Aries441's Tech Blog</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
