@@ -207,8 +207,10 @@ This change significantly reduces adoption friction for both community users and
 &lt;li&gt;&lt;strong&gt;DevOps Security&lt;/strong&gt;: 研究面向复杂权限模型的 DevOps 平台（如 Nacos, Jenkins）的安全体系。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="-正在进行的项目"&gt;🚀 正在进行的项目&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/Aries-441"&gt;AccessGuard&lt;/a&gt;&lt;/strong&gt;
-一个基于 LangGraph 的 DevOps 平台逻辑漏洞自动化审计系统。该项目旨在解决传统扫描器无法理解复杂 RBAC/ABAC 权限模型的问题，利用 LLM 驱动的 Agent 进行智能检索与可达性判定。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/TencentCloud/CubeSandbox"&gt;CubeSandbox&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;作为外部贡献者参与这个基于 MicroVM 的开源 Agent 沙箱项目。我实现了卷级私有数据传递和按卷绑定 S3 兼容存储，随 v0.8.0 发布，也修复了 virtiofsd 中影响 s3fs 文件截断的问题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/Aries-441/ChainGym"&gt;ChainGym&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我主导开发的安全 Agent 评测基准，用于评估 Agent 能否完成需要组合多个漏洞的任务。项目提供隔离的任务环境，并根据请求记录和目标状态自动判分。&lt;/p&gt;
 &lt;h2 id="-联系方式"&gt;📬 联系方式&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;: &lt;a href="https://github.com/Aries-441"&gt;@Aries-441&lt;/a&gt;&lt;/li&gt;
